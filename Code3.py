@@ -7,26 +7,27 @@ l3 = Pin(26, Pin.OUT)
 l4 = Pin(27, Pin.OUT)
 
 list2 = [[1,0,0,0], [0,1,0,0], [0,0,1,0], [0,0,0,1]]
+
 a=0
-while a < 4000 :
-    for i in list2:
-        if a < 2000:
-            l1.value(i[0])
-            l2.value(i[1])
-            l3.value(i[2])
-            l4.value(i[3])
+while True :
+    
+    for a in range(250):
+        for i in list2:
+                l1.value(i[0])
+                l2.value(i[1])
+                l3.value(i[2])
+                l4.value(i[3])
+                time.sleep(0.005)
+            
+    for a in range(250):
+        for i in list2:
+                l1.value(i[3])
+                l2.value(i[2])
+                l3.value(i[1])
+                l4.value(i[0])
+                time.sleep(0.005)
         
-        a = a + 1
-        time.sleep(0.005)
+
         
-    for i in list2:
-        if a > 2000 and a < 4000:
-            l1.value(i[3])
-            l2.value(i[2])
-            l3.value(i[1])
-            l4.value(i[0])
-        
-        a = a + 1
-        time.sleep(0.005)
 
 
